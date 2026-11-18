@@ -7,8 +7,7 @@ import {
   Info, 
   ShieldCheck, 
   ExternalLink,
-  X,
-  Activity
+  X
 } from 'lucide-react';
 import { useAudit } from '../../context/AuditContext';
 
@@ -63,11 +62,15 @@ export default function Sidebar({ isOpen, onClose }) {
       <div className="sidebar-header">
         <div className="brand-wrapper" onClick={() => handleNavClick('dashboard')}>
           <div className="brand-icon-box">
-            <Activity size={22} strokeWidth={2.4} />
+            <img 
+              src="/rankpulse-icon.png" 
+              alt="RankPulse Logo" 
+              className="brand-logo-img" 
+            />
           </div>
           <div>
             <div className="brand-title">RankPulse</div>
-            <div className="brand-subtitle">SEO Platform</div>
+            <div className="brand-subtitle">by Veyor Labs</div>
           </div>
         </div>
 

@@ -1,9 +1,10 @@
 
-# AI-Powered SEO Optimization and Search Ranking Platform
+# RankPulse by Veyor Labs
 
-A modern, responsive, and professional SaaS dashboard frontend for auditing website SEO health, evaluating on-page ranking factors, and delivering actionable developer recommendations.
+> **Analyze. Optimize. Rank.**  
+> AI-Powered SEO Optimization & Search Ranking Platform
 
-Built as a college capstone project.
+A modern, responsive, and professional SaaS dashboard frontend for auditing website SEO health, evaluating on-page ranking factors, and delivering actionable developer recommendations. Built by Veyor Labs.
 
 ---
 

@@ -69,7 +69,7 @@ Meta Description: ${metaDescription?.value || 'Missing'}
 H1: ${h1?.value || 'None'}
 Image Alt Issues: ${imageAlt?.missingAlt} missing out of ${imageAlt?.total}
 Links: ${links?.internal} internal, ${links?.external} external
-Audited via RankPulse SEO Platform`;
+Audited via RankPulse by Veyor Labs`;
 
     navigator.clipboard.writeText(summary);
     setCopied(true);

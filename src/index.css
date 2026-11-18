@@ -115,15 +115,24 @@ body {
 }
 
 .brand-icon-box {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);
+  padding: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-title {
@@ -135,11 +144,11 @@ body {
 }
 
 .brand-subtitle {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  text-transform: none;
 }
 
 .sidebar-nav {

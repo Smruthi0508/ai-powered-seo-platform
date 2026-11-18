@@ -61,18 +61,18 @@ export default function Dashboard() {
     <div>
       {/* Welcome & Fast Search Hero Card */}
       <div className="analyzer-hero-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
           <span className="badge" style={{ background: 'rgba(2, 132, 199, 0.3)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)' }}>
-            College Project Edition
+            RankPulse by Veyor Labs
           </span>
           <span className="badge" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', border: '1px solid rgba(52, 211, 153, 0.3)' }}>
             Rule-Based Audit Engine Active
           </span>
         </div>
 
-        <h2 className="hero-heading">AI-Powered SEO Optimization Platform</h2>
+        <h2 className="hero-heading">RankPulse &mdash; AI-Powered SEO Optimization &amp; Search Ranking Platform</h2>
         <p className="hero-subtitle">
-          Evaluate technical SEO factors, audit meta structures, detect missing image alt tags, 
+          <strong style={{ color: '#38bdf8' }}>Analyze. Optimize. Rank.</strong> &mdash; Evaluate technical SEO factors, audit meta structures, detect missing image alt tags, 
           and receive prioritized actionable recommendations to improve search rankings.
         </p>
 

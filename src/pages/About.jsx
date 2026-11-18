@@ -48,30 +48,74 @@ export default function About() {
     <div>
       {/* Project Overview Card */}
       <div className="card" style={{ marginBottom: '28px', padding: '32px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
           <span className="badge badge-info">
-            <GraduationCap size={14} /> College Project
+            RankPulse by Veyor Labs
           </span>
           <span className="badge badge-success">
-            Academic Year Capstone
+            Analyze. Optimize. Rank.
+          </span>
+          <span className="badge badge-neutral">
+            <GraduationCap size={14} /> College Project
           </span>
         </div>
 
-        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '12px' }}>
-          AI-Powered SEO Optimization and Search Ranking Platform
-        </h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
+          <div style={{ 
+            width: '56px', 
+            height: '56px', 
+            borderRadius: '12px', 
+            background: '#ffffff', 
+            border: '1px solid #e2e8f0', 
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+            padding: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <img 
+              src="/rankpulse-icon.png" 
+              alt="RankPulse Logo" 
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+            />
+          </div>
+          <div>
+            <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.2 }}>
+              RankPulse
+            </h2>
+            <div style={{ fontSize: '1rem', fontWeight: 600, color: '#0284c7', marginTop: '2px' }}>
+              Analyze. Optimize. Rank. &mdash; by Veyor Labs
+            </div>
+          </div>
+        </div>
 
         <p style={{ color: '#475569', fontSize: '0.98rem', lineHeight: 1.7, marginBottom: '20px' }}>
-          Search engine optimization is critical for online visibility, yet many developers and small businesses 
-          struggle with technical accessibility and on-page compliance. This project provides an intuitive, 
-          automated web platform that audits on-page technical factors, scores website health, simulates 
-          search result snippets, and translates complex algorithmic guidelines into clear, prioritized developer fixes.
+          <strong>RankPulse</strong> by <strong>Veyor Labs</strong> is an AI-Powered SEO Optimization &amp; Search Ranking Platform 
+          engineered to evaluate on-page technical factors, score website health, simulate Google search result 
+          snippets, and translate complex algorithmic webmaster guidelines into clear, prioritized developer fixes.
         </p>
+
+        {/* Identity & Metadata Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '20px' }}>
+          <div style={{ background: '#f8fafc', padding: '12px 16px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Product Name</div>
+            <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', marginTop: '2px' }}>RankPulse</div>
+          </div>
+          <div style={{ background: '#f8fafc', padding: '12px 16px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Organization</div>
+            <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0284c7', marginTop: '2px' }}>Veyor Labs</div>
+          </div>
+          <div style={{ background: '#f8fafc', padding: '12px 16px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Brand Tagline</div>
+            <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', marginTop: '2px' }}>Analyze. Optimize. Rank.</div>
+          </div>
+        </div>
 
         <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '12px', padding: '18px', color: '#0369a1' }}>
           <h4 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Cpu size={18} />
-            Academic Transparency Note on AI & Rule-Based Engine
+            Academic Transparency Note on AI &amp; Rule-Based Engine
           </h4>
           <p style={{ fontSize: '0.86rem', lineHeight: 1.5 }}>
             To maintain academic integrity and rigorous methodology, initial evaluation operates via a deterministic, 
