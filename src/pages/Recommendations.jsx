@@ -79,7 +79,7 @@ export default function Recommendations() {
               Actionable SEO Recommendations
             </h2>
             <p className="card-desc">
-              Fix detected issues to improve search engine rankings, indexing speed, and user experience.
+              Review detected on-page SEO issues and apply the suggested improvements to your website.
             </p>
           </div>
 

@@ -5,7 +5,7 @@ export default function ImageAltIssues({ imageAltData }) {
   if (!imageAltData) return null;
 
   const { total = 0, withAlt = 0, missingAlt = 0, missingList = [] } = imageAltData;
-  const isHealthy = missingAlt === 0;
+  const isNotApplicable = total === 0;const isHealthy = total > 0 && missingAlt === 0;
 
   return (
     <div className="card" style={{ marginBottom: '24px' }}>
@@ -19,8 +19,15 @@ export default function ImageAltIssues({ imageAltData }) {
             Alt tags provide text descriptions for screen readers and enable indexing in Google Image Search.
           </p>
         </div>
-        <span className={`badge ${isHealthy ? 'badge-success' : 'badge-error'}`}>
-          {isHealthy ? 'All Images Passed' : `${missingAlt} Missing Alt Tags`}
+        <span className={`badge ${
+          isNotApplicable ? 'badge-info' :
+          isHealthy ? 'badge-success' : 'badge-error'
+        }`}>
+          {isNotApplicable
+          ? 'Not Applicable'
+          : isHealthy
+            ? 'All Images Passed'
+            : `${missingAlt} Missing Alt Tags`}
         </span>
       </div>
 
@@ -82,11 +89,24 @@ export default function ImageAltIssues({ imageAltData }) {
           </div>
         </div>
       ) : (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#ecfdf5', padding: '14px', borderRadius: '10px', color: '#047857', fontSize: '0.88rem' }}>
-          <CheckCircle size={18} />
-          <span>Great job! All images on this page contain valid alternative text descriptions.</span>
-        </div>
-      )}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        background: isNotApplicable ? '#eff6ff' : '#ecfdf5',
+        padding: '14px',
+        borderRadius: '10px',
+        color: isNotApplicable ? '#1d4ed8' : '#047857',
+        fontSize: '0.88rem'
+      }}>
+        {isNotApplicable ? <Info size={18} /> : <CheckCircle size={18} />}
+        <span>
+          {isNotApplicable
+            ? 'No images found on this page. Alt text audit is not applicable.'
+            : 'Great job! All images on this page contain valid alternative text descriptions.'}
+        </span>
+      </div>
+   )}
     </div>
   );
 }

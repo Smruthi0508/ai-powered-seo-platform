@@ -52,7 +52,7 @@ export default function Dashboard() {
 
   const passedCount = activeAudit?.passedChecks || 0;
   const failedCount = activeAudit?.failedChecks || 0;
-  const totalChecks = activeAudit?.totalChecks || 28;
+  const totalChecks = activeAudit?.totalChecks || 5;
   const totalIssues = activeAudit?.totalIssues || 0;
   const passedPct = Math.round((passedCount / totalChecks) * 100) || 0;
   const failedPct = Math.round((failedCount / totalChecks) * 100) || 0;
@@ -109,28 +109,21 @@ export default function Dashboard() {
           {/* Quick Demo URL Presets */}
           <div className="preset-pills-row">
             <span className="preset-pill-label">Try sample websites:</span>
-            <button 
-              type="button" 
-              className="preset-pill"
-              onClick={() => handlePresetClick('https://mytechstore.io')}
-            >
-              mytechstore.io (Score 78)
-            </button>
-            <button 
-              type="button" 
-              className="preset-pill"
-              onClick={() => handlePresetClick('https://fintechflow.dev')}
-            >
-              fintechflow.dev (Score 92)
-            </button>
-            <button 
-              type="button" 
-              className="preset-pill"
-              onClick={() => handlePresetClick('https://freshorganicbites.com')}
-            >
-              freshorganicbites.com (Score 54)
-            </button>
-          </div>
+            <button
+    type="button"
+    className="preset-pill"
+    onClick={() => handlePresetClick('https://example.com')}
+  >
+    example.com
+  </button>
+  <button
+    type="button"
+    className="preset-pill"
+    onClick={() => handlePresetClick('https://httpbin.org/html')}
+  >
+    httpbin.org/html
+  </button>
+</div>
         </form>
       </div>
 
@@ -251,13 +244,23 @@ export default function Dashboard() {
             <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
               <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600, textTransform: 'uppercase' }}>Image Alt Tags</span>
               <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#0f172a', marginTop: '4px' }}>
-                {activeAudit.imageAlt?.missingAlt === 0 
-                  ? 'All images have alt tags' 
-                  : `${activeAudit.imageAlt?.missingAlt} images missing alt`}
+                {activeAudit.imageAlt?.total === 0
+  ? 'No images found'
+  : activeAudit.imageAlt?.missingAlt === 0
+    ? 'All images have alt tags'
+    : `${activeAudit.imageAlt?.missingAlt} images missing alt`}
               </p>
-              <span className={`badge ${activeAudit.imageAlt?.status === 'passed' ? 'badge-success' : 'badge-error'}`} style={{ marginTop: '8px' }}>
-                {activeAudit.imageAlt?.withAlt} / {activeAudit.imageAlt?.total} Covered
-              </span>
+              <span className={`badge ${
+  activeAudit.imageAlt?.status === 'not_applicable'
+    ? 'badge-info'
+    : activeAudit.imageAlt?.status === 'passed'
+      ? 'badge-success'
+      : 'badge-error'
+}`} style={{ marginTop: '8px' }}>
+  {activeAudit.imageAlt?.status === 'not_applicable'
+    ? 'Not Applicable'
+    : `${activeAudit.imageAlt?.withAlt} / ${activeAudit.imageAlt?.total} Covered`}
+</span>
             </div>
 
             <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
@@ -265,9 +268,9 @@ export default function Dashboard() {
               <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#0f172a', marginTop: '4px' }}>
                 {activeAudit.links?.internal} Internal • {activeAudit.links?.external} External
               </p>
-              <span className="badge badge-success" style={{ marginTop: '8px' }}>
-                0 Broken Links
-              </span>
+              <span className="badge badge-info" style={{ marginTop: '8px' }}>
+  Link status not verified
+</span>
             </div>
           </div>
         </div>

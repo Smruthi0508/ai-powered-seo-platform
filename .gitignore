@@ -2,3 +2,13 @@ venv/
 __pycache__/
 *.pyc
 .env
+# Python virtual environment
+.venv/
+
+# React / Vite
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.*

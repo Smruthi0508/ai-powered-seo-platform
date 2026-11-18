@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, AlertTriangle, XCircle, ChevronRight } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, XCircle, ChevronRight, Info } from 'lucide-react';
 
 export default function CheckItem({ check }) {
   const { name, category, status, details } = check;
@@ -18,6 +18,12 @@ export default function CheckItem({ check }) {
             <AlertTriangle size={16} />
           </div>
         );
+      case 'not_applicable':
+        return (
+        <div className="check-icon-circle" title="Not Applicable">
+          <Info size={16} />
+        </div>
+        );
       case 'failed':
       default:
         return (
@@ -34,6 +40,8 @@ export default function CheckItem({ check }) {
         return <span className="badge badge-success">Passed</span>;
       case 'warning':
         return <span className="badge badge-warning">Warning</span>;
+      case 'not_applicable':
+        return <span className="badge badge-info">Not Applicable</span>;
       case 'failed':
       default:
         return <span className="badge badge-error">Failed</span>;

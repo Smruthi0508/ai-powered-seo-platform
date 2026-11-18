@@ -1,14 +1,14 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { SAMPLE_WEBSITES } from '../data/mockData';
+
 import { analyzeWebsite } from '../services/api';
 
 const AuditContext = createContext(null);
 
 export function AuditProvider({ children }) {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [currentUrl, setCurrentUrl] = useState('https://mytechstore.io');
-  const [activeAudit, setActiveAudit] = useState(SAMPLE_WEBSITES[0]);
-  const [analysesHistory, setAnalysesHistory] = useState(SAMPLE_WEBSITES);
+  const [currentUrl, setCurrentUrl] = useState('');
+  const [activeAudit, setActiveAudit] = useState(null);
+  const [analysesHistory, setAnalysesHistory] = useState([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisProgress, setAnalysisProgress] = useState({ text: '', percentage: 0 });
   const [errorMessage, setErrorMessage] = useState('');
@@ -59,7 +59,10 @@ export function AuditProvider({ children }) {
       return true;
     } catch (err) {
       setIsAnalyzing(false);
-      setErrorMessage('An unexpected error occurred during analysis. Please try again.');
+      setAnalysisProgress({ text: '', percentage: 0 });
+      setErrorMessage(
+        err.message || 'SEO analysis failed. Please try again.'
+      );
       return false;
     }
   };

@@ -100,8 +100,12 @@ Audited via RankPulse by Veyor Labs`;
             <div className="report-timestamp">
               <Clock size={13} />
               <span>Audited {auditedAt}</span>
-              <span>• Response Time: {crawlDetails?.loadTime || '340ms'}</span>
-              <span>• HTTP {crawlDetails?.responseCode || 200}</span>
+              {crawlDetails?.loadTime && (
+                <span>• Response Time: {crawlDetails.loadTime}</span>
+              )}
+              {crawlDetails?.responseCode && (
+                <span>• HTTP {crawlDetails.responseCode}</span>
+             )}
             </div>
           </div>
         </div>
@@ -201,8 +205,8 @@ Audited via RankPulse by Veyor Labs`;
           <div style={{ background: '#f8fafc', padding: '10px 14px', borderRadius: '8px', fontSize: '0.8rem', color: '#64748b' }}>
             <div style={{ display: 'flex', gap: '12px' }}>
               <span>H1: <strong>{h1?.hierarchy?.h1 || h1?.count || 0}</strong></span>
-              <span>H2: <strong>{h1?.hierarchy?.h2 || 0}</strong></span>
-              <span>H3: <strong>{h1?.hierarchy?.h3 || 0}</strong></span>
+              <span>H2: <strong>Not checked</strong></span>
+              <span>H3: <strong>Not checked</strong></span>
             </div>
             <div style={{ marginTop: '4px' }}>{h1?.message}</div>
           </div>
@@ -215,8 +219,8 @@ Audited via RankPulse by Veyor Labs`;
               <Link2 size={18} color="#0284c7" />
               Link Architecture
             </h3>
-            <span className="badge badge-success">
-              {links?.broken === 0 ? 'No Broken Links' : `${links?.broken} Broken`}
+            <span className="badge badge-warning">
+              Link status not verified
             </span>
           </div>
 
@@ -253,7 +257,7 @@ Audited via RankPulse by Veyor Labs`;
               All On-Page & Technical SEO Checkpoints
             </h3>
             <p className="card-desc">
-              Comprehensive rule checklist covering meta structures, accessibility, crawlers, and performance.
+              Rule-based checklist covering page titles, meta descriptions, H1 headings, image alt attributes, and links.
             </p>
           </div>
 
@@ -282,6 +286,12 @@ Audited via RankPulse by Veyor Labs`;
               onClick={() => setCheckFilter('failed')}
             >
               Failed ({checks.filter(c => c.status === 'failed').length})
+            </button>
+            <button
+            className={`tab-btn ${checkFilter === 'not_applicable' ? 'active' : ''}`}
+            onClick={() => setCheckFilter('not_applicable')}
+            >
+              Not Applicable ({checks.filter(c => c.status === 'not_applicable').length})
             </button>
           </div>
         </div>
