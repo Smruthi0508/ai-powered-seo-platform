@@ -1,3 +1,4 @@
+
 # AI-Powered SEO Optimization and Search Ranking Platform
 
 A modern, responsive, and professional SaaS dashboard frontend for auditing website SEO health, evaluating on-page ranking factors, and delivering actionable developer recommendations.
@@ -101,3 +102,5 @@ The frontend is built with a separate API service (`src/services/api.js`) ready 
    ```env
    VITE_API_BASE_URL=http://localhost:8000/api/v1
    ```
+
+
