@@ -1,9 +1,4 @@
-node_modules
-dist
-dist-ssr
-*.local
+venv/
+__pycache__/
+*.pyc
 .env
-.env.*
-.DS_Store
-Thumbs.db
-powershell.cmd

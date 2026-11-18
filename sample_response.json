@@ -1,0 +1,56 @@
+
+{
+  "url": "https://example.com/",
+  "seo_score": 60,
+  "checks": {
+    "title": {
+      "status": "pass",
+      "value": "Example Domain",
+      "points": 20,
+      "max_points": 20,
+      "message": "Title found."
+    },
+    "meta_description": {
+      "status": "fail",
+      "value": null,
+      "points": 0,
+      "max_points": 20,
+      "message": "Meta description is missing."
+    },
+    "h1": {
+      "status": "fail",
+      "value": [],
+      "points": 0,
+      "max_points": 20,
+      "message": "H1 heading is missing."
+    },
+    "image_alt": {
+      "status": "not_applicable",
+      "value": {
+        "total": 0,
+        "with_alt": 0,
+        "missing_alt": 0
+      },
+      "points": 20,
+      "max_points": 20,
+      "message": "No images found."
+    },
+    "links": {
+      "status": "not_applicable",
+      "value": {
+        "total": 0,
+        "internal": 0,
+        "external": 0,
+        "missing_href": 0
+      },
+      "points": 20,
+      "max_points": 20,
+      "message": "No links found."
+    }
+  },
+  "recommendations": [
+    "Review the page title length; roughly 30–60 characters is suggested.",
+    "Add a concise page description.",
+    "Add a clear main heading."
+  ]
+}
